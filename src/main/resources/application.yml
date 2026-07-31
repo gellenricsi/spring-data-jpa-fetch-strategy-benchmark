@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Bachelorarbeit
+    username: postgres
+    password: admin
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        generate_statistics: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -120,6 +120,15 @@ public class OrderBenchmarkService {
             memoryDeltas.add((double) result.getUsedMemoryDeltaKb());
             memoryTimeProducts.add(result.getDurationMs() * result.getUsedMemoryDeltaKb());
 
+            System.out.println(
+                    scenarioName
+                            + " | Run " + (i + 1)
+                            + " | Memory before: " + result.getUsedMemoryBeforeKb() + " KB"
+                            + " | Memory after: " + result.getUsedMemoryAfterKb() + " KB"
+                            + " | Memory delta: " + result.getUsedMemoryDeltaKb() + " KB"
+                            + " | Duration: " + result.getDurationMs() + " ms"
+            );
+
             orderCount = result.getOrderCount();
             totalItems = result.getTotalItems();
         }
